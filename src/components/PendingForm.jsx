@@ -1,15 +1,19 @@
 import { createPending } from '../functions/createPending';
 
-function PendingForm() {
+function PendingForm({ refreshAllPendings }) {
   async function submitHandler(e) {
     e.preventDefault();
     const priority = e.target.priority.value;
     const description = e.target.description.value;
-    const email = e.target.email.value;
+    const contact = e.target.contact.value;
 
-    const data = { priority, description, email };
+    const data = { priority, description, contact };
     await createPending(data);
-    e.target.priority.value = e.target.description.value = e.target.email = '';
+    e.target.priority.value =
+      e.target.description.value =
+      e.target.contact.value =
+        '';
+    refreshAllPendings()
   }
 
   return (
@@ -42,7 +46,7 @@ function PendingForm() {
           Contacto
           <input
             type="email"
-            id="email"
+            id="contact"
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           />
         </label>

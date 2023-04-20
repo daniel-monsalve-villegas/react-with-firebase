@@ -5,7 +5,12 @@ async function getAllPendings() {
   try {
     const collectionRef = collection(db, 'pendings');
     const docsCrypts = await getDocs(collectionRef);
-    const docs = docsCrypts.docs.map((d) => d.data());
+    const docs = docsCrypts.docs.map((d) => {
+      return {
+        id: d.id,
+        ...d.data(),
+      };
+    });
     return docs;
   } catch (e) {
     console.error(e);
