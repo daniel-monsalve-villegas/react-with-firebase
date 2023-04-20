@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Home } from './components/Home';
-import { Login } from './components/Login';
+import Home from './views/Home';
+import { Login } from './views/Login';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/credenciales';
 
