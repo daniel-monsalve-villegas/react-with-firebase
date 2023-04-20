@@ -1,9 +1,9 @@
 import { addDoc, collection } from 'firebase/firestore';
-import { firestore } from '../firebase/credenciales';
+import { db } from '../firebase/credenciales';
 
 export async function createPending(data) {
   try {
-    const collectionRef = collection(firestore, 'pendings');
+    const collectionRef = collection(db, 'pendings');
     const pedingsId = await addDoc(collectionRef, data);
     return pedingsId;
   } catch (e) {

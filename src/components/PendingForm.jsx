@@ -1,4 +1,3 @@
-import React from 'react';
 import { createPending } from '../functions/createPending';
 
 function PendingForm() {
@@ -41,8 +40,11 @@ function PendingForm() {
 
         <label className="flex flex-col">
           Contacto
-          <input type="email" id="email"
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" />
+          <input
+            type="email"
+            id="email"
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          />
         </label>
 
         <button className="bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
