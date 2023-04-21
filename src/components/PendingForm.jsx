@@ -13,14 +13,14 @@ function PendingForm({ refreshAllPendings }) {
       e.target.description.value =
       e.target.contact.value =
         '';
-    refreshAllPendings()
+    refreshAllPendings();
   }
 
   return (
-    <div>
+    <div className="flex flex-row min-w-full">
       <form
         onSubmit={submitHandler}
-        className="flex flex-row justify-around my-5 min-w-full"
+        className="flex flex-row justify-around my-5 min-w-[90%]"
       >
         <label className="flex flex-col mx-10">
           <select
@@ -55,6 +55,16 @@ function PendingForm({ refreshAllPendings }) {
           Agregar
         </button>
       </form>
+
+      <button
+        className="bg-slate-700 text-white rounded py-2 px-4 hover:bg-slate-900 focus:outline-none"
+        onClick={() => {
+          const modalSearch = document.querySelector('#search-modal');
+          modalSearch.showModal();
+        }}
+      >
+        Buscar
+      </button>
     </div>
   );
 }

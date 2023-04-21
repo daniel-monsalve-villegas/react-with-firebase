@@ -4,6 +4,7 @@ import PendingForm from '../components/PendingForm';
 import PendingsCard from '../components/PendingsCard';
 import getAllPendings from '../functions/readPendings.js';
 import EditPendingModal from '../components/EditPendingModal';
+import SearchModal from '../components/SearchModal';
 
 function Home({ user }) {
   const [allPendings, setAllPendings] = useState(null);
@@ -30,6 +31,7 @@ function Home({ user }) {
         pending={selectedPending}
         refreshAllPendings={refreshAllPendings}
       />
+      <SearchModal />
       <PendingForm refreshAllPendings={refreshAllPendings} />
       {allPendings &&
         allPendings.map((pending) => (
